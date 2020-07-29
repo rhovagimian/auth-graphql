@@ -1,5 +1,5 @@
 {
-  "name": "users",
+  "name": "auth-graphql",
   "version": "1.0.0",
   "description": "Starter pack for an auth-included graphql project",
   "repository": {
@@ -8,7 +8,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --ignore client"
+    "dev": "nodemon index.js --ignore client",
+    "build-schema": "node ./scripts/buildSchema.js",
+    "relay": "relay-compiler --src ./ --schema ./server/schema/schema.graphql"
   },
   "author": "",
   "license": "ISC",
@@ -39,6 +41,7 @@
     "babel-plugin-relay": "^10.0.1",
     "html-webpack-plugin": "^4.3.0",
     "nodemon": "^2.0.4",
+    "relay-compiler": "^10.0.1",
     "webpack": "^4.44.0",
     "webpack-dev-middleware": "^3.7.2"
   }

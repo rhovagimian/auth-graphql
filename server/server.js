@@ -5,7 +5,7 @@ const db = require("./services/db");
 const session = require("express-session");
 const passport = require("passport");
 const auth = require("./services/auth");
-const schema = require("./schema");
+const schema = require("./schema/schema");
 
 // Create a new Express application
 const app = express();

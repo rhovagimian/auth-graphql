@@ -7,17 +7,15 @@ import LoginForm from "./components/LoginForm";
 
 const Root = () => {
   return (
-    <div className="container">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
-          <Route path="/"></Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/login">
+          <LoginForm />
+        </Route>
+        <Route path="/"></Route>
+      </Switch>
+    </Router>
   );
 };
 

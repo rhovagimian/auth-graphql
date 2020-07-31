@@ -39,23 +39,21 @@ function renderQuery({ error, props }) {
 
 function Header() {
   return (
-    <div className="row">
-      <nav className="col">
-        <div className="nav-wrapper">
-          <Link to="/" className="brand-logo left">
-            TUMO
-          </Link>
-          <ul className="right">
-            <QueryRenderer
-              environment={environment}
-              query={query}
-              variables={{}}
-              render={renderQuery}
-            />
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <nav>
+      <div className="nav-wrapper">
+        <Link to="/" className="brand-logo left">
+          TUMO
+        </Link>
+        <ul className="right">
+          <QueryRenderer
+            environment={environment}
+            query={query}
+            variables={{}}
+            render={renderQuery}
+          />
+        </ul>
+      </div>
+    </nav>
   );
 }
 

@@ -1,16 +1,12 @@
 //@ts-check
 import React, { useState } from "react";
 
-function AuthForm(props) {
+function AuthForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const onSubmit = (e) => {
-    e.preventDefault();
-    props.onSubmit({ email, password });
-  };
   return (
     <div className="row">
-      <form className="col s6" onSubmit={onSubmit}>
+      <form className="col s6">
         <div className="input-field">
           <label>Email</label>
           <input

@@ -3,7 +3,7 @@ import React from "react";
 import { graphql, QueryRenderer } from "react-relay";
 import environment from "../relay/environment";
 import { Link } from "react-router-dom";
-import LogoutButton from "./LogoutButton";
+import LogoutLink from "./LogoutLink";
 
 const query = graphql`
   query Header_Query {
@@ -20,7 +20,7 @@ function renderQuery({ error, props }) {
   if (props.user) {
     return (
       <li>
-        <LogoutButton />
+        <LogoutLink />
       </li>
     );
   } else {

@@ -1,36 +1,36 @@
 //@ts-check
 import React from "react";
-import { graphql, QueryRenderer, commitMutation } from "react-relay";
+import { graphql, commitMutation } from "react-relay";
 import environment from "../relay/environment";
 import { useHistory } from "react-router-dom";
 
 const mutation = graphql`
-  mutation LogoutLink_Mutation {
+  mutation LogoutButton_Mutation {
     logout {
       id
     }
   }
 `;
 
-function LogoutLink() {
+function LogoutButton() {
   const history = useHistory();
+  const updater = (store, response) => {
+    const { id } = response.logout;
+    if (id) {
+      store.delete(id);
+    }
+  };
   const onLogout = () => {
     commitMutation(environment, {
       mutation,
       variables: {},
-      onCompleted: (response, errors) => {
+      onCompleted: () => {
         history.push("/");
       },
-      updater: (store, data) => {
-        //@ts-ignore
-        const id = data.logout;
-        if (id) {
-          store.delete(id);
-        }
-      },
+      updater,
     });
   };
   return <a onClick={onLogout}>Logout</a>;
 }
 
-export default LogoutLink;
+export default LogoutButton;

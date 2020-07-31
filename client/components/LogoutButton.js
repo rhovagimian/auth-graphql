@@ -5,14 +5,14 @@ import environment from "../relay/environment";
 import { useHistory } from "react-router-dom";
 
 const mutation = graphql`
-  mutation LogoutLink_Mutation {
+  mutation LogoutButton_Mutation {
     logout {
       id
     }
   }
 `;
 
-function LogoutLink() {
+function LogoutButton() {
   const history = useHistory();
   const updater = (store, response) => {
     const { id } = response.logout;
@@ -33,4 +33,4 @@ function LogoutLink() {
   return <a onClick={onLogout}>Logout</a>;
 }
 
-export default LogoutLink;
+export default LogoutButton;

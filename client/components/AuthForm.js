@@ -22,11 +22,14 @@ function AuthForm() {
           <input
             type="password"
             onChange={(e) => {
-              setEmail(e.target.value);
+              setPassword(e.target.value);
             }}
             value={password}
           />
         </div>
+        <button className="btn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

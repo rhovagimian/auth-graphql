@@ -31,11 +31,6 @@ function AuthForm(props) {
             value={password}
           />
         </div>
-        <div className="errors">
-          {props.errors.map((error) => (
-            <div key={error}>{error}</div>
-          ))}
-        </div>
         <button className="btn" type="submit">
           Submit
         </button>

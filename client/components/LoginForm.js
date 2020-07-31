@@ -1,5 +1,5 @@
 //@ts-check
-import React, { useState } from "react";
+import React from "react";
 import AuthForm from "./AuthForm";
 import { graphql, commitMutation } from "react-relay";
 import environment from "../relay/environment";
@@ -13,7 +13,6 @@ const mutation = graphql`
 `;
 
 function LoginForm() {
-  const [errors, setErrors] = useState([]);
   return (
     <div>
       <h3>Login</h3>
@@ -27,12 +26,11 @@ function LoginForm() {
             },
             onCompleted: (response, errors) => {
               if (errors) {
-                setErrors(errors.map((e) => e.message));
+                console.log(errors);
               }
             },
           });
         }}
-        errors={errors}
       />
     </div>
   );
